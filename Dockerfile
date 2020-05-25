@@ -13,7 +13,7 @@ RUN wget --directory-prefix=/var/lib/neo4j/plugins \
 neo4j-graph-data-science-${GDS_VERSION}-standalone.zip
 
 WORKDIR /var/lib/neo4j/plugins
-RUN unzip rm neo4j-graph-data-science-${GDS_VERSION}-standalone.zip
+RUN unzip neo4j-graph-data-science-${GDS_VERSION}-standalone.zip
 
 # mangle Neo4j config to allow APOC to function
 RUN printf "# enable APOC\ndbms.security.procedures.unrestricted=apoc.*,gds.*\ndbms.security.procedures.whitelist=apoc.*,gds.*\napoc.import.file.enabled=true\ndbms.directories.import=/imports\n" >> /var/lib/neo4j/conf/neo4j.conf
