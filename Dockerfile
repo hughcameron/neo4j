@@ -1,8 +1,8 @@
 # Dockerfile for Neo4j with APOC plugin
-FROM neo4j:4.0.3
+FROM neo4j:latest
 
 # versions
-ARG NEO4J_VERSION=4.0.3
+ARG NEO4J_VERSION=4.0.4
 ENV GDS_VERSION=1.2.1
 
 RUN apt-get update; apt-get install -y unzip
